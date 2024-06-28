@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fa_IR" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مینی‌دوره آموزش زبان SASS</title>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark-reasonable.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>مینی‌دوره آموزش زبان SASS | رضا قلعه‌خانی</h1>
+            <button onclick="window.print()">پرینت</button>
+        </div>
+    </header>
+    <section class="main">
+        <div class="container">
+            <h2>معرفی SASS</h2>
+            <p>سرواژه SASS، مخفف Syntactically Awesome Style Sheets، یک پیش‌پردازنده CSS است که به شما اجازه می‌دهد از
+                امکاناتی مانند متغیرها، توابع، و وراثت استفاده کنید تا کد CSS خود را سازماندهی‌شده‌تر و کارآمدتر
+                بنویسید. علاوه بر SASS پیش‌پردازنده‌های دیگری نیز برای CSS وجود دارد که معروف‌ترین آنها LESS و Stylus
+                هستند.</p>
+            <img src="./assets/images/screenshot.png" alt="Screenshot for SASS mini course">
+            <div class="pagebreak"></div>
+            <h2>ویژگی‌های SASS</h2>
+            <ul>
+                <li><strong>متغیرها (Variables)</strong>: متغیرها به شما اجازه می‌دهند مقادیر قابل استفاده مجدد را در
+                    سراسر پروژه تعریف کنید. برای مثال، می‌توانید رنگ‌های اصلی سایت یا اندازه‌های خاصی را به عنوان متغیر
+                    ذخیره کنید.</li>
+                <li><strong>تو در تویی (Nesting)</strong>: SASS اجازه می‌دهد که کد CSS خود را به صورت تو در تو بنویسید
+                    تا ساختار کد شما مشابه ساختار HTML باشد، که این کار خوانایی و نگهداری کد را بهبود می‌بخشد.</li>
+                <li><strong>ماژول‌ها (Modules)</strong>: ماژول‌ها به شما اجازه می‌دهند کد خود را به فایل‌های کوچک‌تر
+                    تقسیم کنید و سپس آنها را در فایل اصلی خود وارد کنید.</li>
+                <li><strong>توابع (Functions)</strong>: توابع در SASS به شما امکان می‌دهند محاسبات و عملیات تکراری را
+                    انجام دهید و از نتیجه آن در کد خود استفاده کنید.</li>
+                <li><strong>وراثت (Inheritance)</strong>: وراثت به شما امکان می‌دهد خصوصیات یک کلاس را به کلاس دیگری
+                    منتقل کنید.</li>
+                <li><strong>شرط‌ها (Conditionals)</strong>: شرط‌ها به شما اجازه می‌دهند که بر اساس شرایط خاصی، کد CSS
+                    متفاوتی تولید کنید.</li>
+                <li><strong>حلقه‌ها (Loops)</strong>: حلقه‌ها در SASS به شما اجازه می‌دهند کد CSS تکراری را به صورت
+                    خودکار تولید کنید.</li>
+            </ul>
+            <h2>فرمت فایل‌های SASS</h2>
+            <p>کدهای زبان SASS داخل فایل‌هایی با فرمت <code>scss.</code> یا <code>sass.</code> ذخیره می‌شوند و بعد از
+                کامپایل شدن، فایل‌هایی با فرمت <code>css.</code> برای شما ایجاد می‌کنند.</p>
+            <blockquote>در این مینی‌دوره آموزشی ما از فایل‌های <code>scss.</code> استفاده می‌کنیم که رایج‌تر هستند.
+            </blockquote>
+            <h2>متغیرها (Variables)</h2>
+            <p>در SASS، می‌توانید متغیرها را با استفاده از علامت دلار (<code>$</code>) تعریف کنید. برای مثال:</p>
+            <pre><code class="language-scss">$primary-color: #333;
+$padding: 10px;
+
+body {
+    color: $primary-color;
+    padding: $padding;
+}</code></pre>
+            <p>بعد از کامپایل شدن این کدها، خروجی CSS زیر تولید می‌شود:</p>
+            <div class="pagebreak"></div>
+            <pre><code class="language-css">body {
+    color: #333;
+    padding: 10px;
+}
+</code></pre>
+<h2>تو در تویی (Nesting)</h2>
+<p>تو در تویی در SASS به شما اجازه می‌دهد که به صورت تو در تو CSS بنویسید تا ساختار کد شما شبیه HTML باشد:</p>
+<pre><code class="language-scss">nav {
+    ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    }
+
+    li { display: inline-block; }
+
+    a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+    }
+}
+</code></pre>
+<p>بعد از کامپایل شدن این کدها، خروجی CSS زیر تولید می‌شود:</p>
+<pre><code class="language-css">nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li { display: inline-block; }
+
+nav a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+}
+</code></pre>
+<h2>ماژول‌ها (Modules)</h2>
+<p>ماژول‌ها به شما کمک می‌کنند تا کد CSS خود را به فایل‌های کوچکتر تقسیم کنید و سپس آنها را وارد فایل اصلی خود کنید:</p>
+<pre><code class="language-scss">// _variables.scss
+$primary-color: #333;
+
+// main.scss
+@import 'variables';
+
+body {
+    color: $primary-color;
+}</code></pre>
+<p>بعد از کامپایل شدن این کدها، خروجی CSS زیر تولید می‌شود:</p>
+<pre><code class="language-css">body {
+    color: #333;
+}
+</code></pre>
+<h2>توابع (Functions)</h2>
+<p>توابع در SASS به شما امکان می‌دهند که عملیات پیچیده‌ای را انجام دهید و از نتایج آن در کد CSS خود استفاده کنید:</p>
+<pre><code class="language-scss">@function calculate-spacing($factor) {
+    @return $factor * 8px;
+}
+
+.container {
+    margin: calculate-spacing(2);
+}</code></pre>
+<p>بعد از کامپایل شدن این کدها، خروجی CSS زیر تولید می‌شود:</p>
+<pre><code class="language-css">.container {
+    margin: 16px;
+}</code></pre>
+<h2>وراثت (Inheritance)</h2>
+<p>وراثت به شما امکان می‌دهد که خصوصیات یک کلاس را به کلاس دیگری منتقل کنید:</p>
+<pre><code class="language-scss">%message {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+}
+
+.success {
+    @extend %message;
+    border-color: green;
+}
+
+.error {
+    @extend %message;
+    border-color: red;
+}</code></pre>
+<p>بعد از کامپایل شدن این کدها، خروجی CSS زیر تولید می‌شود:</p>
+<pre><code class="language-css">.success {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+    border-color: green;
+}
+
+.error {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+    border-color: red;
+}</code></pre>
+<div class="pagebreak"></div>
+<h2>شرط‌ها (Conditionals)</h2>
+<p>شرط‌ها به شما اجازه می‌دهند که بر اساس شرایط خاصی کد CSS متفاوتی تولید کنید:</p>
+<pre><code class="language-scss">$theme: dark;
+
+body {
+    @if $theme == dark {
+        background: #333;
+        color: #fff;
+    } @else {
+        background: #fff;
+        color: #000;
+    }
+}</code></pre>
+<p>بعد از کامپایل شدن این کدها، خروجی CSS زیر تولید می‌شود:</p>
+<pre><code class="language-css">body {
+    background: #333;
+    color: #fff;
+}</code></pre>
+
+<h2>حلقه‌ها (Loops)</h2>
+<p>حلقه‌ها در SASS به شما اجازه می‌دهند کد CSS تکراری را به صورت خودکار تولید کنید:</p>
+<pre><code class="language-scss">@for $i from 1 through 3 {
+    .column-#{$i} {
+        width: 100% / $i;
+    }
+}</code></pre>
+<p>بعد از کامپایل شدن این کدها، خروجی CSS زیر تولید می‌شود:</p>
+<div class="pagebreak"></div>
+<pre><code class="language-css">.column-1 {
+    width: 100%;
+}
+
+.column-2 {
+    width: 50%;
+}
+
+.column-3 {
+    width: 33.3%;
+}</code></pre>
+<h2>نصب SASS</h2>
+<p>برای نصب SASS بر روی سیستم عامل خود می‌توانید از روش‌های مختلفی استفاده کنید که ساده‌ترین آنها روش زیر است:</p>
+<blockquote>نصب و فعال‌سازی اکستنشن <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass" target="_blank">Live Sass Compiler</a> بر روی ادیتور محبوب VSCode</blockquote>
+<p>همچنین می‌توانید با استفاده از ابزارهای مدیریت پکیج (package manager) نیز SASS را روی سیستم عامل خود نصب کنید:</p>
+<p>۱- با استفاده از پکیج منیجر Node.js</p>
+<pre><code>npm install -g sass</code></pre>
+<p>۲- با استفاده از Chocolatey در سیستم عامل ویندوز</p>
+<pre><code>choco install sass</code></pre>
+<p>۳- با استفاده از Homebrew در سیستم عامل MacOS X و Linux</p>
+<pre><code>brew install sass/sass/sass</code></pre>
+<p>۴- می‌توانید سورس SASS را از گیت‌هاب پروژه دانلود کرده و آن را به <code>PATH</code> سیستم عامل خود اضافه کنید: https://github.com/sass/dart-sass</p>
+<div class="pagebreak"></div>
+<h2>بهترین تنظیمات برای اکستنشن Live Sass Compiler</h2>
+<pre><code class="language-json">"liveSassCompile.settings.formats": [
+    {
+        "format": "expanded",
+        "extensionName": ".css",
+        "savePath": "/assets/css",
+    },
+    {
+        "format": "compressed",
+        "extensionName": ".min.css",
+        "savePath": "/assets/css",
+    }
+],
+"liveSassCompile.settings.generateMap": false,
+"liveSassCompile.settings.autoprefix": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR"
+],
+"liveSassCompile.settings.showOutputWindowOn": "None",</code></pre>
+
+<h2>منابع</h2>
+<p>جهت مطالعه بیشتر در مورد این زبان کاربردی می‌توانید به مستندات SASS به نشانی <a href="https://sass-lang.com/documentation" target="_blank">https://sass-lang.com/documentation</a> مراجعه نمایید.</p>
+<h2>کدهای دوره</h2>
+<p>کلیه کدهای مورد استفاده در این دوره را می‌توانید در <a href="https://github.com/reza-qalekhani/sass-mini-course" target="_blank">این ریپازیتوری گیت‌هاب</a> مشاهده و دانلود نمایید.</p>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>این آموزش توسط کانال یوتوب رضا قلعه‌خانی به نشانی <a href="https://www.youtube.com/@reza_qalekhani"
+                    target="_blank">https://www.youtube.com/@reza_qalekhani</a> گردآوری شده است.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/scss.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

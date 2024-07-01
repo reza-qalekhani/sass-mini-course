@@ -1,0 +1,74 @@
+@import 'variables';
+@import 'fonts';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    font-size: 16px;
+    background-color: $light-color;
+    color: $dark-color;
+}
+
+a {
+    text-decoration: none;
+    color: $light-color;
+
+    &:hover {
+        color: $dark-color;
+    }
+}
+
+.hero {
+    background-color: $primary-color;
+    color: $light-color;
+    height: 500px;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul {
+            display: flex;
+            list-style-type: none;
+
+            li {
+                padding: 15px;
+            }
+        }
+    }
+
+    &-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin-top: 30px;
+
+        img {
+            width: 50%;
+        }
+
+        h1 {
+            font-size: 50px;
+            line-height: 1.2;
+        }
+
+        .btn-primary {
+            @extend %btn;
+            background-color: darken($secondary-color, 10);
+        }
+
+        .btn-secondary {
+            @extend %btn;
+            background-color: darken($subtle-color, 10);
+        }
+    }
+}
+
+@import 'utilities';

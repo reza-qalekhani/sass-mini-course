@@ -1,0 +1,134 @@
+@import 'variables';
+@import 'fonts';
+
+@function change-text-color($color) {
+    @if(lightness($color)>70) {
+        @return #000000;
+    }
+
+    @else {
+        @return #FFFFFF;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    font-size: 16px;
+    background-color: $light-color;
+    color: $dark-color;
+}
+
+a {
+    text-decoration: none;
+    color: $light-color;
+
+    &:hover {
+        color: $dark-color;
+    }
+}
+
+.hero {
+    background-color: $primary-color;
+    color: $light-color;
+    height: 500px;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul {
+            display: flex;
+            list-style-type: none;
+
+            li {
+                padding: 15px;
+            }
+        }
+    }
+
+    &-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin-top: 30px;
+
+        img {
+            width: 50%;
+        }
+
+        h1 {
+            font-size: 50px;
+            line-height: 1.2;
+        }
+
+        .btn-primary {
+            @extend %btn;
+            background-color: darken($secondary-color, 10);
+        }
+
+        .btn-secondary {
+            @extend %btn;
+            background-color: darken($subtle-color, 10);
+        }
+    }
+}
+
+.main {
+    .container {
+        .inner-div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+
+            .col {
+                width: 50%;
+
+                p {
+                    text-align: justify;
+                    margin: 1rem;
+                }
+
+                table {
+                    width: 100%;
+                }
+
+                table,
+                th,
+                td {
+                    border: 2px solid $light-color;
+                    border-collapse: collapse;
+                    padding: 5px;
+                    text-align: center
+                }
+
+                table thead tr {
+                    background-color: $subtle-color;
+                }
+            }
+        }
+
+        @for $i from 1 through 6 {
+            tbody tr:nth-child(#{$i}) {
+                background-color: lighten($primary-color, $i*10)
+            }
+        }
+
+        .test {
+            background-color: $dark-color;
+            color:change-text-color($dark-color)
+        }
+    }
+}
+
+@import 'utilities';
+@import 'reponsive';

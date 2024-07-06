@@ -1,0 +1,17 @@
+$font-list : ('vazir', 'iransans', 'yekanbakh');
+
+@each $font in $font-list {
+    @font-face {
+        font-family: #{$font};
+        src: url('../fonts/#{$font}_regular.woff2');
+        font-style: normal;
+        font-weight: normal;
+    }
+
+    @font-face {
+        font-family: #{$font};
+        src: url('../fonts/#{$font}_bold.woff2');
+        font-style: normal;
+        font-weight: bold;
+    }
+}
